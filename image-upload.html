@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title>cupload</title>
+        <link rel="stylesheet" href="style/image-enlarge/custom.css">
+	</head>
+	<body>
+        <div id="fullPage">
+            <canvas id="canvas"></canvas>
+        </div>
+		<p>新建</p>
+		<div id="cupload-create"></div>
+		<p>编辑</p>
+		<div id="cupload-update"></div>
+	</body>
+    <script src="js/image-upload/cupload.js"></script>
+    <script src="js/image-enlarge/index.js"></script>
+    <script type="text/javascript">
+        // For enlarge lib.
+        var wxScale=new WxScale({
+            fullPage:document.querySelector("#fullPage"),
+            canvas:document.querySelector("#canvas")
+        });
+
+        // For Upload components creation
+		var cuploadCreate = new Cupload ({
+			ele: '#cupload-create',
+            num: 3
+		});
+
+		var cuploadUpdate = new Cupload ({
+			ele	 : '#cupload-update',
+			num  : 100,
+            data : ["asset/image/1.png", "asset/image/2.png", "asset/image/3.png"]
+		});
+	</script>
+</html>
